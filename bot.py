@@ -1,7 +1,7 @@
 from webbrowser import get
 import telebot;
 
-bot = telebot.TeleBot('5111904045:AAHuoV4Nkufbq655WPcf1YMNukUy7fiTBTQ');
+bot = telebot.TeleBot('5222385963:AAGHBicwxC5LGznh6T3--DeyUfLHLnCaJOw');
 
 def gl(login='rusal'):
     import json
@@ -21,7 +21,7 @@ def gl(login='rusal'):
 def gd(login='rusal', getpdn='passport'):
     getpdn = getpdn.lower()
     import json
-    fileObject = open("data.json", "r")
+    fileObject = open("data.json", "r",encoding="UTF-8")
     jsonContent = fileObject.read()
     ListOfItem = json.loads(jsonContent)
     result=''
@@ -32,7 +32,7 @@ def gd(login='rusal', getpdn='passport'):
 
 def gn(login='rusal'):
     import json
-    fileObject = open("data.json", "r")
+    fileObject = open("data.json", "r",encoding="UTF-8")
     jsonContent = fileObject.read()
     ListOfItem = json.loads(jsonContent)
     result=''
@@ -54,7 +54,8 @@ def get_text_messages(message):
     elif str(message.text).lower() == "/name":
         bot.send_message(message.from_user.id, "Имя вледльца данных: " + gn(message.chat.id))
     elif splitted_text[0] == "/gd":
-        bot.send_message(message.from_user.id, "Хранимые персональные данные по полю " + splitted_text[1] + ": " + gd(message.chat.id, splitted_text[1]))
+        if len(splitted_text)>1:
+            bot.send_message(message.from_user.id, "Хранимые персональные данные по полю " + splitted_text[1] + ": " + gd(message.chat.id, splitted_text[1]))
     else:
         bot.send_message(message.from_user.id, "Для информации введите /help.")
 
