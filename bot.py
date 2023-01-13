@@ -1,7 +1,7 @@
 from webbrowser import get
 import telebot;
 
-bot = telebot.TeleBot('5222385963:AAGHBicwxC5LGznh6T3--DeyUfLHLnCaJOw');
+bot = telebot.TeleBot('5982175377:AAG9_9nyODx2tgpqg5qYgKqAIuhUdhPukTg');
 
 def gl(login='rusal'):
     import json
